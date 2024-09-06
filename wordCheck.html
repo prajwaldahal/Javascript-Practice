@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>my page </title> 
+		<script>
+			var count=function ()
+			{
+			    var word=1,line=1; 
+				var s2=document.getElementById("input1").value;
+				for(i=0;i<s2.length;i++)
+				{
+					if(s2[i]==" ")
+					{
+						word++;
+					}
+					else if(s2[i]=="\n"){
+						line++;
+					}
+				}	
+				document.getElementById("ans").innerHTML=String("word="+word+" line="+line);		z		
+			}
+		</script>
+	</head>
+	<body>
+		<label for="temp">enter the text</label>
+		<textarea name="temp" id="input1"></textarea>
+		<input type="submit" name="temp" value="submit" onclick = "count()"/>
+		<p id="ans"></p>
+	</body>
+</html>

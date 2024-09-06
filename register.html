@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>my page</title>
+		<script>
+				function validate()
+				{
+					valid=false;
+					x=document.forms["form1"];
+					try{
+						for(i=0;i<x.length-1;i++)
+						{
+							switch(x[i].value)
+							{
+								case "":
+								{
+									valid=true;
+									throw x[i].name+" cannot be empty";
+								}
+							}
+						}
+						result=/^[a-z]+$/gi.test(x[0].value) 
+						if(!result)
+						{
+								valid=true;
+								throw "name cannot contain special character and digit"	
+						}
+						else if(x[0].value.length<4)
+						{
+							valid=true;
+							throw "very less characters"
+						}
+						else
+						{
+							if(x[3].value.length==10)
+							{
+								result=/\d{10}/g.test(x[3].value) 
+								if(!result)
+								{
+									valid=true;
+									throw "mobileno cannot contain letter and special characters";
+								}
+							}
+							else
+							{
+								valid=true;
+								throw "mobile no is less or more than 10 digit";
+							}								
+						}
+						str=x[4].value
+						str1=str.split('@');
+						str2=str1[1].split('.');
+						if(str1.length!=2||str2.length!=2)
+							throw "invalid email";
+						str=x[5].value;
+						if(str.length<=8 && str.length>=15)
+						{
+							valid=true;
+							throw "less than 8 character or more than 15 character";
+						}
+						else 
+						{
+							result3=/[A-Z]/g.test(str);
+							result2 =(/\W/g.test(str)) || (str.includes("_"));
+							result4 = /\d/g.test(str);
+							//document.write(result3+"<br/>");
+							//document.write(result2);
+							if((!result3) || (!result2) || !result4)
+								throw "password should have first  capital and should contain atleast one special character";
+						}
+					}catch(err){
+						alert(err);
+					}
+				}
+		</script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>REGISTER HERE</h1>
+            <div class="logincontainer">
+                <form method="post" name="form1">
+                    <input type="text" placeholder="your name here" name="name" value="prjvsdc"/>
+                    <input type="text" placeholder="your address here" name="address" value="prj,vsdc"/>
+                    <input type="text" placeholder="username here" name="username" value="prj-vsdc"/>
+                    <input type="text" placeholder="mobile no here" name="mobileno" value="9810486043"/>
+                    <input type="email" placeholder="your Email here" name="email" value="pdf@xyz.com"/>
+                    <input type="text" placeholder="PASSWORD HERE" name="password" value="prj_vsdc"/>
+                    <input  onclick=validate(); type="submit" value="register" name="register"/>
+                </form>
+            </div>
+    </body>
+</html>

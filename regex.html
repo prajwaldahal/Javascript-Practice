@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check(){
+            x=document.forms[0];
+            username=x[0].value;
+            if(!(/[a-z]{4,15}/i.test(username.charAt(0)))){
+                alert("invalid username");
+            }
+            if(/\D/.test(username.charAt(username.length-1))){
+                alert("invalid usernameASDF");
+            }
+        }
+    </script>
+    <form>
+        <input type="text" name="uname"/>
+        <input type="button" value="btn" onclick="check();"/>
+    </form>
+</body>
+</html>

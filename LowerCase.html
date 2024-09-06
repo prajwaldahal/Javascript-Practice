@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>my page </title>
+		<script>
+			function changeCase(){
+				s=document.getElementById("name").value;
+				document.getElementById("five").innerHTML=s.toLowerCase();
+			}
+			conf = confirm("are you sure");
+			document.write(conf);
+			function myfunc(){
+				history.back();
+			}
+		</script>
+		</head>
+	<body>
+		<p>name:</p>
+		<input id="name" type="Text" name="text1"/>
+		<p id="five">Output Here</p>
+		<input type="button" value="btn" onclick="myfunc()"/>
+		<button  onclick=changeCase();>change</button>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        function time()
+        {
+            today = new Date();
+            meridian="am";
+            hour=today.getHours();
+            if(hour<12){
+                meridian="am";
+            }
+            else{
+                meridian="pm";
+            }
+            hour=check(checkAmPm(hour));
+            minute=check(today.getMinutes());
+            second=check(today.getSeconds());
+            document.getElementsByTagName("p")[0].innerHTML=hour+":"+minute+":"+second+" "+meridian;
+        }
+        function check(value)
+        {
+            if(value.toString().length<2)
+            {
+                value="0"+value;
+            }
+            return value;
+        }
+        function checkAmPm(value){
+            if(value>12)
+              value=value%12;
+            return value;
+        }
+        setInterval(time,1000);
+    </script>
+</body>
+</html>

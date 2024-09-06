@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum()
+        {
+            add=0;
+            for (let index = 0; index < arguments.length; index++)
+                add += arguments[index];
+            return add;
+        }
+        document.writeln("sum of 1 to 2="+sum(1,2));
+        document.writeln("sum of 1 to 3="+sum(1,2,3));
+        document.writeln("sum of 1 to 5="+sum(1,2,3,4,5));
+    </script>
+</body>
+</html>

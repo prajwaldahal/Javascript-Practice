@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>my page </title>
+		<script>
+			function validate(){
+				x=document.forms["num"];
+				if(x[0].value>8)
+					window.alert("number is greater than 8");
+			}
+		</script>
+	</head>
+	<body>
+		<p>enter a number less than 8</p>
+		<form id="num">
+			<input type="text" placeholder="Number  here" name="name"/>
+			<input  onclick=validate(); type="submit" value="submit" name="submit"/>
+		</form>
+	</body>
+</html>

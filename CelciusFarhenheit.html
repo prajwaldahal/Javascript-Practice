@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>my page </title>
+		<script>
+			var valueChange=function(val)
+			{
+				document.getElementById("convert").innerHTML=val;	
+			}
+			var tempConvert=function ()
+			{
+			    var c; 
+				var s=document.getElementById("convert").innerHTML;
+				var s2=document.getElementById("input1").value;
+				if(s == "Farhenheit to celcius") 
+				{ 
+					c = (parseInt(s2) - 32) * 5/9; 
+				}  
+				else 
+				{ 
+					c = ( parseInt(s2) * 9/5)+ 32; 
+				}	
+				document.getElementById("ans").innerHTML=String(c);	
+			}
+		</script>
+	</head>
+	<body>
+		<label for="cars">Choose:</label>
+		<select name="cars" id="cars" onchange="valueChange(this.value);">
+		  <option value="Farhenheit to celcius" selected>Farhenheit to celcius</option>
+		  <option value="Celcius to farhenheit">Celcius to farhenheit</option>
+		</select>
+		<p>enter the temperature</p>
+		<input type="text" name="temp" id="input1"/>
+		<button id="convert" onclick="tempConvert()">Farhenheit to celcius</button>
+		<p id="ans">Output here</p>
+	</body>
+</html>	

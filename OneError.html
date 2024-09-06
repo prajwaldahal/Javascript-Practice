@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>my page</title>
+	</head>
+	<body >
+		<script>
+			onerror = errorHandler
+			document.write("Welcome to this website") // Deliberate error
+			function errorHandler(message, url, line)
+			{
+				out = "Sorry, an error was encountered.\n\n";
+				out += "Error: " + message + "\n";
+				out += "URL: " + url + "\n";
+				out += "Line: " + line + "\n\n";
+				out += "Click OK to continue.\n\n";
+				window.alert(out);
+			}
+		</script>
+
+	</body>
+</html>

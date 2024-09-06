@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>my page</title>
+		<script>
+				function validate()
+				{
+					x=document.forms["form1"];
+					try{
+							if(x[0].value.length==10)
+							{
+								result=/\d{10}/g.test(x[0].value) 
+								if(!result)
+								{
+									throw "mobileno cannot contain letter and special characters";
+								}
+							}
+							else
+							{
+								throw "mobile no is less or more than 10 digit";
+							}								
+					}catch(err){
+						alert(err);
+					}
+				}
+		</script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>REGISTER HERE</h1>
+            <div class="logincontainer">
+                <form method="post" id="form1">
+                    <input type="text" placeholder="mobile no here" name="mobileno"/>
+                    <input type="submit" name="sbmt" value="submit" onclick="validate()"/>
+                </form>
+            </div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>my page </title>
+		<script>
+			function AddFive(){
+				s=document.getElementById("five").innerHTML;
+				i=parseInt(s)+5;
+				document.getElementById("five").innerHTML=i.toString();
+			}
+		</script>
+	</head>
+	<body>
+		<p>here number will be added by five every time when button is clicked</p>
+		<p id="five">5</p>
+		<button  onclick=AddFive()>Addition</button>
+	</body>
+</html>
